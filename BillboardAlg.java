@@ -19,31 +19,102 @@ public class BillboardAlg {
 
 
         Scanner scan = new Scanner(inFile);
-        ArrayList<Integer> revenues = new ArrayList<Integer>();
+        //ArrayList<Integer> revenues = new ArrayList<Integer>();
 
-        int minInterval = 0;
-        int maxInterval = 0;
-        int count = 0;
 
-        while (scan.hasNextInt()) {
-            if (count == 0) {
-                minInterval = scan.nextInt();
-                count++;
-            } else if (count == 1) {
-                maxInterval = scan.nextInt();
-                count++;
-            } else {
-                int ni = scan.nextInt();
-                revenues.add(ni);
-                //System.out.println(ni);
-            }
+        String[] intLine = scan.nextLine().split("\\s+");
+        int minInterval = Integer.parseInt(intLine[0]);
+        int maxInterval = Integer.parseInt(intLine[1]);
+
+        // Gets location distances from second line of input
+        String[] nextLine = scan.nextLine().split("\\s+");
+        int[] locations = new int[nextLine.length];
+        int i = 0;
+        for (String c : nextLine) {
+            locations[i] = Integer.parseInt(c);
+            System.out.print(c);
+            i++;
         }
+
+        System.out.println();
+        // Gets revenues from third line of input
+        String[] nextLine2 = scan.nextLine().split("\\s+");
+        int[] revenues = new int[nextLine2.length];
+
+        int j = 0;
+        for (String c : nextLine2) {
+            locations[j] = Integer.parseInt(c);
+            System.out.print(c);
+            j++;
+        }
+        //System.out.println(ni);
+
+
+        max(locations, revenue, minInterval);
+
+
+
+
+
+
+
+
+
+
+
     }
 
-    public static int max(int min, int max, ArrayList<Integer> revs) {
+    public static int max(int[] distance, int[] revenues, int minInterval) {
+
+        int nextBoard = 0;
+        int[] MR = new int[distance.length+1];
+
+        for (int i = 0; i < distance.length; i++) {
+
+            if (nextBoard < distance.length) {
+                if (distance[i] >= minInterval) {
+                    MR[i] = 
+                }
+            }
 
 
-        return max()
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     }
